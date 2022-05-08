@@ -6,8 +6,15 @@ Quinta semana de la materia Pruebas Automatizadas de Software, en la que se real
 - Editar una página, nuevamente se hace login, se cambia una página previamente existente, en su título y contenido, se regresa nuevamente a la página principal.
 - Eliminar una página, se hace login, eliminamos una página y se observan los cambios en la página principal.
 ## Instrucciones para ejecutar los escenarios en Kraken
+- Clonar este repositorio en una carpeta vacía.
+- Ejecutar el comando npm init para que la carpeta node_modules se genere.
+- Cambiar en la carpeta properties.json tanto el nombre de usuario USERNAME como la contraseña PASSWORD por la del GHOST local.
+- Tener instalado ADB, o tenerlo en el path del computador.
+- Ejecutar el comando npx kraken-node run.
 ## Instrucciones para ejecutar los escenarios en Cypress
-- Instalar la cersión de node 16.14.2
+- Instalar la versión de node 16.14.2
+- Clonar este repositorio en una carpeta vacía.
 - Abra un terminal y ejecute el comando npm install -g cypress
+- En el archivo cypress.json cambiar el usuario y constraseña del GHOST local.
 - Corra las pruebas con el comando cypress run
 - Cada uno de los escenarios tendra un archivo con video y pantallazos que permiten visualizar las pruebas.
