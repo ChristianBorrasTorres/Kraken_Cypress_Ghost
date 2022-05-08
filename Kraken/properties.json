@@ -1,8 +1,20 @@
 {
 
-    "PAGE" : "https://www.messenger.com/login",
+    "PAGE" : "http://localhost:2368/ghost/#/signin",
 
     "USERNAME": "cet1@hotmail.es",
 
-    "PASSWORD": "HOLAcomo,estas1"
+    "PASSWORD": "123456,.AB",
+
+    "PAGETITLE": "New page",
+
+    "PAGECONTENT": "Hello World!!!",
+
+    "UPDATEPAGETITLE": "New page number 2",
+
+    "UPDATEPAGECONTENT": "Hello World Again!!!",
+
+    "POSTTITLE": "New Great Post",
+
+    "POSTCONTENT": "New Hello World!!!"
 }
