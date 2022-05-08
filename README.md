@@ -5,6 +5,7 @@ Quinta semana de la materia Pruebas Automatizadas de Software, en la que se real
 - Crear un borrador de la página, se realza el login, se crea la página sin un nombre, ni con contenido, retornando luego a la pantalla principal, garantizando su creación como borrador.
 - Editar una página, nuevamente se hace login, se cambia una página previamente existente, en su título y contenido, se regresa nuevamente a la página principal.
 - Eliminar una página, se hace login, eliminamos una página y se observan los cambios en la página principal.
+- Crear un tag, editarlo, asignarlo a un post, quitarlo de un post, y eliminar el tag.
 ## Instrucciones para ejecutar los escenarios en Kraken
 - Clonar este repositorio en una carpeta vacía.
 - Ejecutar el comando npm init para que la carpeta node_modules se genere.
