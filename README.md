@@ -1,4 +1,4 @@
-# Kaken_Cypress_Ghost
+# Kraken_Cypress_Ghost
 Quinta semana de la materia Pruebas Automatizadas de Software, en la que se realizaran pruebas con las herramientas Kraken y Cypress, con el fin de conocer las ventajas y desventajas en su uso.
 ## Funcionalidades bajo prueba:
 - Crear una página con estado publicado, los pasos para ello son realizar el login, crear la página con su nombre y algún tipo de contenido, para finalmente regresar a la pantalla principal garantizando su creación.
