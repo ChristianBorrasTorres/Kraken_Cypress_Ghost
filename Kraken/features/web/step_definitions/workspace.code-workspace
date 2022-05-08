@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "Kaken_Cypress_Ghost",
+			"path": "..\\..\\..\\.."
+		},
+		{
+			"name": "cypress",
+			"path": "..\\..\\..\\..\\..\\..\\cypress"
+		}
+	],
+	"settings": {}
+}

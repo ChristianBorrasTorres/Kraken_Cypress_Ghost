@@ -1,0 +1,10 @@
+{
+    "projectId":"Pruebas-Cypress",
+     "chromeWebSecurity": false,
+     "modifyObstructiveCode": true,
+     "baseUrl" : "http://localhost:2368/ghost/#/signin",
+     "user" : "cet1@hotmail.es",
+     "password" : "123456,.AB",
+     "experimentalSourceRewriting": true,
+     "numeroDeInteracciones": 2
+}
