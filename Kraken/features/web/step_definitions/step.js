@@ -74,6 +74,23 @@ Then('I enter a page content {kraken-string}', async function (pageContent) {
 
   });
 
+  Then("I click on preview button", async function () {
+
+    let element = await this.driver.$('.gh-editor-preview-trigger')
+
+    return await element.click();
+
+  });
+
+  Then("I click on back button", async function () {
+
+    let element = await this.driver.$('.gh-editor-back-button')
+
+    return await element.click();
+
+  });
+  
+
 Then("I click on pages to return", async function () {
 
     let element = await this.driver.$(".gh-editor-back-button")
@@ -193,3 +210,4 @@ Then("I click on post to return", async function () {
     return await element.click();
 
   });
+

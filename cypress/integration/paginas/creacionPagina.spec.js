@@ -34,7 +34,8 @@ describe('Test to create Page', () => {
     it('Test go to page and new page', () =>{
         cy.get('a[href*="#/pages/"]').click();
         cy.wait(2000);
-        cy.get('a[class="ember-view gh-btn gh-btn-green"]').click();
+        cy.get('a[class="ember-view gh-btn gh-btn-primary view-actions-top-row"]').click();
+        //cy.get('#ember88 > span')
         cy.wait(3000);
         
     })
