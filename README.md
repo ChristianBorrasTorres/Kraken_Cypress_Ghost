@@ -6,6 +6,9 @@ Quinta semana de la materia Pruebas Automatizadas de Software, en la que se real
 - Editar una página, nuevamente se hace login, se cambia una página previamente existente, en su título y contenido, se regresa nuevamente a la página principal.
 - Eliminar una página, se hace login, eliminamos una página y se observan los cambios en la página principal.
 - Crear un tag, editarlo, asignarlo a un post, quitarlo de un post, y eliminar el tag.
+- Previsualizar un post y una página.
+- Filtrar posts por post publicados.
+- Publicar post programado con la opción por defecto.
 ## Instrucciones para ejecutar los escenarios en Kraken
 - Clonar este repositorio en una carpeta vacía.
 - Ejecutar el comando npm init para que la carpeta node_modules se genere.
