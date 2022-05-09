@@ -2,9 +2,9 @@
 
     "PAGE" : "http://localhost:2368/ghost/#/signin",
 
-    "USERNAME": "f.russi@uniandes.edu.co",
+    "USERNAME": "p.mykoda@uniandes.edu.co",
 
-    "PASSWORD": "Y8BdnRk5dwKL4UP",
+    "PASSWORD": "12345678!A",
 
     "PAGETITLE": "New page",
 
@@ -16,5 +16,9 @@
 
     "POSTTITLE": "New Great Post",
 
-    "POSTCONTENT": "New Hello World!!!"
+    "POSTCONTENT": "New Hello World!!!",
+
+    "TAGNAME": "New Tag",
+
+    "NEWPOSTTITLE": "New Post"
 }

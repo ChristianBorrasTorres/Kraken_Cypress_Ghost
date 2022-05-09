@@ -110,3 +110,49 @@ Scenario: Como usuario inicio sesiónm, hago borrador de una página y previsual
   And I wait for 2 seconds
   Then I click on sign out
   And I wait for 5 seconds
+
+  @user1 @web
+Scenario: Como usuario inicio sesión, creo un tag, lo asigno a un post, y lo quito otra vez
+  Given I navigate to page "<PAGE>"
+  And I wait for 5 seconds
+  When I enter email "<USERNAME>"
+  Then I enter password "<PASSWORD>" 
+  And I wait for 2 seconds
+  Then I click on the login button
+  And I wait for 2 seconds
+  Then I click on tags
+  And I wait for 2 seconds
+  Then I click on new tag
+  And I wait for 2 seconds
+  Then I enter a tag name "<TAGNAME>"
+  And I wait for 2 seconds
+  Then I click on Save
+  And I wait for 2 seconds
+
+  Then I click on Published Posts
+  And I wait for 2 seconds
+  Then I click on new post
+  And I wait for 2 seconds
+  Then I enter a post title "<NEWPOSTTITLE>"
+  And I wait for 2 seconds
+  Then I click on Post Settings
+  And I wait for 2 seconds
+  Then I click on Tags of the Post
+  And I wait for 2 seconds
+  Then I click on Tag to add to Post
+  And I wait for 2 seconds
+  Then I click on Publish the Post
+  And I wait for 2 seconds
+  Then I click on Publish again
+  And I wait for 2 seconds
+
+  Then I click on Post Settings
+  And I wait for 2 seconds
+  Then I remove Tag from Post
+  And I wait for 2 seconds
+  Then I click on Post Settings
+  And I wait for 2 seconds
+  Then I click on update Post
+  And I wait for 2 seconds
+  Then I confirm update Post
+  And I wait for 2 seconds

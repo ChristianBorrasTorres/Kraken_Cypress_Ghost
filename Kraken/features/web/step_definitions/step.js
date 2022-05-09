@@ -211,3 +211,120 @@ Then("I click on post to return", async function () {
 
   });
 
+
+
+  Then('I click on tags', async function () {
+
+    let element = await this.driver.$('a[href="#/tags/"]');
+  
+    return await element.click();
+  
+  });
+  
+  Then("I click on new tag", async function () {
+  
+    let element = await this.driver.$('a[href="#/tags/new/"]')
+  
+    return await element.click();
+  
+  });
+  
+  
+  Then('I enter a tag name {kraken-string}', async function (tagName) {
+  
+    let element = await this.driver.$('.ember-text-field');
+  
+    return await element.setValue(tagName);
+  
+  });
+  
+  
+  Then("I click on Save", async function () {
+  
+    let element = await this.driver.$(".gh-btn")
+  
+    return await element.click();
+  
+  });
+  
+  
+  Then("I click on Published Posts", async function () {
+  
+    let element = await this.driver.$('a[href="#/posts/?type=published"]')
+  
+    return await element.click();
+  
+  });
+  
+  
+  
+  Then("I click on Post Settings", async function () {
+  
+    let element = await this.driver.$(".settings-menu-toggle")
+  
+    return await element.click();
+  
+  });
+  
+  
+  Then("I click on Tags of the Post", async function () {
+  
+    let element = await this.driver.$(".ember-power-select-trigger-multiple-input")
+  
+    return await element.click();
+  
+  });
+  
+  
+  Then("I click on Tag to add to Post", async function () {
+  
+    let element = await this.driver.$(".ember-power-select-option")
+  
+    return await element.click();
+  
+  });
+  
+  
+  
+  Then("I click on Publish the Post", async function () {
+  
+    let element = await this.driver.$(".gh-publishmenu-trigger")
+  
+    return await element.click();
+  
+  });
+  
+  
+  Then("I click on Publish again", async function () {
+  
+    let element = await this.driver.$(".gh-publishmenu-button")
+  
+    return await element.click();
+  
+  });
+
+
+  Then("I remove Tag from Post", async function () {
+  
+    let element = await this.driver.$(".ember-power-select-multiple-remove-btn")
+  
+    return await element.click();
+  
+  });
+
+
+  Then("I click on update Post", async function () {
+  
+    let element = await this.driver.$(".ember-view.ember-basic-dropdown-trigger")
+  
+    return await element.click();
+  
+  });
+
+  Then("I confirm update Post", async function () {
+  
+    let element = await this.driver.$(".gh-btn.gh-btn-black.gh-publishmenu-button.gh-btn-icon.ember-view")
+  
+    return await element.click();
+  
+  });
