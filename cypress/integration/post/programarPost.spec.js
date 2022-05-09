@@ -1,4 +1,4 @@
-// previsualizarPost.spec.js created with Cypress
+// programarPost.spec.js created with Cypress
 //
 // Start writing your Cypress tests below!
 // If you're unfamiliar with how Cypress works,
@@ -8,7 +8,7 @@ const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-s
 var i = 0;
 var caso = 4;
 
-context('Testing Preview Post', () => { 
+context('Testing Create Post, Publish and schedule', () => { 
 
     before(() => {
         cy.visit('/#/signin');
@@ -46,16 +46,21 @@ context('Testing Preview Post', () => {
         cy.get('.koenig-editor__editor').type("Hola Mundo");
         cy.wait(2000);
     });       
+   
+    it('Test Publish', () => {        
+        cy.get('div[role="button"]').first().click({force: true});
+        cy.wait(2000);
+        cy.get(':nth-child(2) > .gh-publishmenu-radio-content > .gh-publishmenu-radio-label').click();
+        cy.wait(3000);
+        cy.get('button[class="gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view"]').click();
+        cy.wait(3000);
+        cy.get('button[class="gh-btn gh-btn-black gh-btn-icon ember-view"]').click();
+        cy.wait(3000);
+    });       
+   
 
-    it('Test Preview post', () => {
-        cy.get('section.flex > :nth-child(1) > .gh-btn > span').click();
-        //cy.get('div.button[class="gn-btn gh-editor-preview-trigger"]').click();
-        cy.wait(5000);
-        cy.get('button[class="gh-editor-back-button"]').click();
-
-    });
-
-
-    
-
+    it('Button Back to page', () => {
+        cy.get('a[href*="#/posts"]').first().click({force: true});
+    })
+     
 })

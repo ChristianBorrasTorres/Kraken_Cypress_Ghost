@@ -1,4 +1,4 @@
-// creacionPagina.spec.js created with Cypress
+// previsualizarPagina.spec.js created with Cypress
 //
 // Start writing your Cypress tests below!
 // If you're unfamiliar with how Cypress works,
@@ -35,15 +35,21 @@ describe('Test to create Page', () => {
         cy.get('a[href*="#/pages/"]').click();
         cy.wait(2000);
         cy.get('a[class="ember-view gh-btn gh-btn-primary view-actions-top-row"]').click();
-        //cy.get('#ember88 > span')
         cy.wait(3000);
         
     })
     
     it('Test type title and content', () => {
         cy.get('textarea').first().type("Title page");
-        cy.wait(2000);
+        cy.get('.koenig-editor__editor').type("Hola");
+        cy.wait(10000);
     })
+
+    it('Test go to preview and return', () => {
+        cy.get('button[class="gh-btn gh-editor-preview-trigger"]').click();
+        cy.wait(2000);
+        cy.get('button[class="gh-editor-back-button"]').click();
+    });
 
     it('Button Back to page', () => {
         cy.get('a[href*="#/pages/"]').first().click({force: true})
