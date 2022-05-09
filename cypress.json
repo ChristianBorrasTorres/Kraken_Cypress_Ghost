@@ -3,8 +3,8 @@
      "chromeWebSecurity": false,
      "modifyObstructiveCode": true,
      "baseUrl" : "http://localhost:2368/ghost/#/signin",
-     "user" : "p.mykoda@uniandes.edu.co",
-     "password" : "12345678!A",
+     "user" : "y.lozada@uniandes.edu.co",
+     "password" : "Gh0st2022/*",
      "experimentalSourceRewriting": true,
      "numeroDeInteracciones": 2
 }
