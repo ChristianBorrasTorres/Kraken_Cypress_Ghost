@@ -1,4 +1,7 @@
+import PageObjectTags from "../../support/pageObjectTags";
+
 const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
+const pageObject=new PageObjectTags();
 var i = 0;
 var caso = 1;
 
@@ -18,29 +21,31 @@ describe('Test to create Tag', () => {
         cy.clearCookies();
     })
 
-    it('Test Login into', () => {
-        cy.get('input[name=identification]').type(Cypress.config('user'));
-        cy.get('input[name="password"]').type(Cypress.config('password'));
-        cy.get('[id="ember11"]').click();
-        cy.wait(3000);
+    it('1 Test Login', () => {
+        pageObject.login();
+        cy.wait(2000);
+        cy.screenshot();
     })
 
-    it('Test go to tag and new tag', () =>{
-        cy.get('a[href*="#/tags/"]').click();
-        cy.wait(3000);
-        cy.get('a[href*="#/tags/new"]').first().click();
-        cy.wait(3000);
+    it('2 Test go to tag and new tag', () =>{
+        pageObject.goToTags();
+        cy.wait(2000);
+        pageObject.goToNewTag();
+        cy.wait(2000);
+        cy.screenshot();
     })
 
-    it('Test type tag title', () => {
-        cy.get('input[id="tag-name"]').type("New Tag");
+    it('3 Test type tag title', () => {
+        pageObject.selectTextfieldTagName().type("New Tag");
         cy.wait(3000);
-        cy.get('button[class="gh-btn gh-btn-primary gh-btn-icon ember-view"]').click();
+        pageObject.saveTagChanges();
+        cy.screenshot();
     })
 
-    it('Button Back to tags', () => {
-        cy.get('a[href*="#/tags/"]').first().click({force: true})
+    it('4 Button Back to tags', () => {
+        pageObject.goToTags();
         cy.wait(3000);
+        cy.screenshot();
     })
 
 })

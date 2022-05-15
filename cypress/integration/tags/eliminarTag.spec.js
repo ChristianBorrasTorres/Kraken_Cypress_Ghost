@@ -1,4 +1,7 @@
+import PageObjectTags from "../../support/pageObjectTags";
+
 const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
+const pageObject=new PageObjectTags();
 var i = 0;
 var caso = 1;
 
@@ -18,52 +21,48 @@ describe('Test to eliminate Tag', () => {
         cy.clearCookies();
     })
 
-    it('Test Login into', () => {
-        cy.get('input[name=identification]').type(Cypress.config('user'));
-        cy.get('input[name="password"]').type(Cypress.config('password'));
-        cy.get('[id="ember11"]').click();
-        cy.wait(3000);
-    })
-
-    it('Test go to tag and new tag', () =>{
-        cy.get('a[href*="#/tags/"]').click();
+    it('1 Test Login', () => {
+        pageObject.login();
         cy.wait(2000);
-        cy.get('a[href*="#/tags/new"]').first().click();
+        cy.screenshot();
+    })
+
+    it('2 Test go to tag and new tag', () =>{
+        pageObject.goToTags();
         cy.wait(2000);
-    })
-
-    it('Test type tag title', () => {
-        cy.get('input[id="tag-name"]').type("TagEliminate");
+        pageObject.goToNewTag();
         cy.wait(2000);
-        cy.get('button[class="gh-btn gh-btn-primary gh-btn-icon ember-view"]').click();
+        cy.screenshot();
     })
 
-    it('Button Back to tags', () => {
-        cy.get('a[href*="#/tags/"]').first().click({force: true})
+    it('3 Test type tag title', () => {
+        pageObject.selectTextfieldTagName().type("TagEliminate");
         cy.wait(2000);
+        pageObject.saveTagChanges();
+        cy.screenshot();
     })
 
-    it('Test go to tag', () =>{
-        cy.get('[class="gh-list-row gh-tags-list-item"]').contains('TagEliminate').click();
+    it('4 Button Back to tags', () => {
+        pageObject.goToTags();
+        cy.wait(2000);
+        cy.screenshot();
+    })
+
+    it('5 Test go to tag', () =>{
+        pageObject.getTagList().contains('TagEliminate').click();
         cy.wait(3000);
+        cy.screenshot();
     })
 
-    it('Test delete tag', () => {
-        cy.get('button[class="gh-btn gh-btn-red gh-btn-icon"]').click();
-        cy.wait(1000);
-        cy.get('button[class="gh-btn gh-btn-red gh-btn-icon ember-view"]').click();
-        cy.wait(3000);
+    it('6 Test delete tag', () => {
+        pageObject.deleteTag();
+        cy.screenshot();
     })
 
-    it('Button Back to tags', () => {
-        cy.get('a[href*="#/tags/"]').first().click({force: true})
-        cy.wait(3000);
+    it('7 Button Back to tags', () => {
+        pageObject.goToTags();
+        cy.wait(2000);
+        cy.screenshot();
     })
-
-    it('Got to tag', () => {
-        cy.get('a[href*="#/tags/"]').first().click({force: true})
-        cy.wait(3000);
-    })
-
 
 })

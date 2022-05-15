@@ -1,4 +1,7 @@
+import PageObjectTags from "../../support/pageObjectTags";
+
 const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
+const pageObject=new PageObjectTags();
 var i = 0;
 var caso = 1;
 
@@ -18,86 +21,87 @@ describe('Test to remove Tag from Post', () => {
         cy.clearCookies();
     })
 
-    it('Test Login into', () => {
-        cy.get('input[name=identification]').type(Cypress.config('user'));
-        cy.get('input[name="password"]').type(Cypress.config('password'));
-        cy.get('[id="ember11"]').click();
-        cy.wait(3000);
+    it('1 Test Login', () => {
+        pageObject.login();
+        cy.wait(2000);
+        cy.screenshot();
     })
 
-    it('Test go to tag and new tag', () =>{
-        cy.get('a[href*="#/tags/"]').click();
+    it('2 Test go to tag and new tag', () =>{
+        pageObject.goToTags();
         cy.wait(2000);
-        cy.get('a[href*="#/tags/new"]').first().click();
+        pageObject.goToNewTag();
         cy.wait(2000);
+        cy.screenshot();
     })
 
-    it('Test type tag title', () => {
-        cy.get('input[id="tag-name"]').type("TagRemove");
+    it('3 Test type tag title', () => {
+        pageObject.selectTextfieldTagName().type("TagRemove");
         cy.wait(2000);
-        cy.get('button[class="gh-btn gh-btn-primary gh-btn-icon ember-view"]').click();
+        pageObject.saveTagChanges();
     })
 
-    it('Button Back to tags', () => {
-        cy.get('a[href*="#/tags/"]').first().click({force: true})
+    it('4 Button Back to tags', () => {
+        pageObject.goToTags();
         cy.wait(2000);
+        cy.screenshot();
     })
 
-    it('Test Page create post', () => {
-        cy.get('a[href*="#/posts/"]').first().click({force: true});
-        cy.wait(2000); 
+    it('5 Test Page create post', () => {
+        pageObject.goToPosts();
+        cy.wait(2000);
+        cy.screenshot();
     })
 
-    it('Button new post', () => {
-        cy.get('a[href*="#/editor/post"]').first().click({force: true});
+    it('6 Button new post', () => {
+        pageObject.clickNewPost();
         cy.wait(2000);
+        cy.screenshot();
     })
 
-    it('Test Enter Title', () => {
-        cy.get('textarea').first().type("Post (remove Tag)");
-        cy.get('.koenig-editor__editor').type("Hola Mundo");
+    it('7 Test Enter Title', () => {
+        pageObject.selectPostTitle().type("Post (remove Tag)");
+        pageObject.selectPostBody().type("Hola Mundo");
         cy.wait(2000);
-    });       
+        cy.screenshot();
+    });        
    
-    it('Test Publish', () => {        
-        cy.get('div[role="button"]').first().click({force: true});
-        cy.wait(2000);
-        cy.get('button[class="gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view"]').click();
-        cy.wait(3000);
-        cy.get('button[class="gh-btn gh-btn-black gh-btn-icon ember-view"]').click();
-        cy.wait(3000);
-    });     
+    it('8 Test Publish Post', () => {        
+        pageObject.publishPost();
+        cy.screenshot();
+    });      
 
-    it('Test go to settings and add tag', () => {
-        cy.get('button[title="Settings"]').click();
+    it('9 Test go to settings and add tag', () => {
+        pageObject.selectPostSettings();
         cy.wait(3000);
-        cy.get('[id="tag-input"]').click();
-        cy.get('[class="ember-power-select-option"]').contains('TagRemove').click();
+        pageObject.selectTagOptions().contains('TagRemove').click();
+        cy.screenshot();
     })
 
-    it('Button update changes', () => {
-        cy.get('button[title="Settings"]').click();
-        cy.get('[class="gh-publishmenu ember-view"]').click();
-        cy.wait(1000);
-        cy.get('button[class="gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view"]').click();
-        cy.wait(3000);
+    it('10 Button update changes', () => {
+        pageObject.selectPostSettings();
+        pageObject.updatePost();
+        cy.screenshot();
     })
 
-
-    it('Test go to settings and remove tag', () => {
-        cy.get('button[title="Settings"]').click();
+    it('11 Test go to settings and remove tag', () => {
+        pageObject.selectPostSettings();
         cy.wait(3000);
-        cy.get('[id="tag-input"]').click();
-        cy.get('[class="ember-power-select-multiple-option tag-token js-draggableObject draggable-object ember-view"]').contains('TagRemove');
-        cy.get('[class="ember-power-select-multiple-remove-btn"]').first().click();
+        pageObject.selectAddedTag().contains('TagRemove');
+        pageObject.removeSelectedTag();
+        cy.screenshot();
     })
 
-    it('Button update changes', () => {
-        cy.get('button[title="Settings"]').click();
-        cy.get('[class="gh-publishmenu ember-view"]').click();
-        cy.wait(1000);
-        cy.get('button[class="gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view"]').click();
+    it('12 Button update changes', () => {
+        pageObject.selectPostSettings();
+        pageObject.updatePost();
+        cy.screenshot();
+    })
+
+    it('13 Test go to settings and check', () => {
+        pageObject.selectPostSettings();
         cy.wait(3000);
+        cy.screenshot();
     })
 
 })
