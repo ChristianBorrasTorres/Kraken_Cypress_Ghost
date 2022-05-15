@@ -1,4 +1,4 @@
-class PageObjectTags {
+class PageObjectTagsV410 {
     goToTags() {
         cy.get('a[href*="#/tags/"]').first().click({force: true});
     }
@@ -42,7 +42,7 @@ class PageObjectTags {
         cy.wait(2000);
         cy.get('button[class="gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view"]').click();
         cy.wait(3000);
-        cy.get('button[class="gh-btn gh-btn-black gh-btn-icon ember-view"]').click();
+        cy.get('button[class="gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view"]').click();
         cy.wait(3000);
     }
 
@@ -84,13 +84,12 @@ class PageObjectTags {
     selectAddedTag() {
         cy.get('[id="tag-input"]').click();
         cy.wait(1000);
-        return cy.get('[class="ember-power-select-multiple-option tag-token js-draggableObject draggable-object ember-view"]');
+        return cy.get('[class="ember-power-select-multiple-option tag-token js-draggableObject draggable-object ember-view"]').click();
     }
 
     removeSelectedTag() {
         cy.get('[class="ember-power-select-multiple-remove-btn"]').first().click();
         cy.wait(1000);
     }
-
-}
-    export default PageObjectTags
+    }
+    export default PageObjectTagsV410

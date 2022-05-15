@@ -20,28 +20,21 @@ describe('Testing delete Page', () => {
         cy.clearCookies();
     })
 
-    it('1 Test Login into', () => {
+    it('1 Test Login', () => {
         pageObject.login();
+        cy.wait(2000);
         cy.screenshot();
     })
 
-    it('2 Test go to page', () =>{
-        cy.get('a[href*="#/pages/"]').first().click();
-        cy.wait(2000);
-
-        cy.get('li.gh-list-row.gh-posts-list-item').first().within(() => 
-        {
-            cy.get('a[href*="#/editor/page/"]').first().click({force: true})
-        })
+    it('Test go to page', () =>{
+        pageObject.goToPages();
+        pageObject.goToEditPage();
         cy.wait(3000);
-        cy.screenshot();
     })
     
-    it('3 Test click post-settings and delete', () => {
-        cy.get('button[class="settings-menu-toggle gh-btn gh-btn-editor gh-btn-icon icon-only gh-btn-action-icon"]').click();
-        cy.wait(1000)
+    it('Test click page-settings and delete', () => {
+        pageObject.goToPageSettings();
         pageObject.deletePage();
-        cy.screenshot();
     })
    
   })

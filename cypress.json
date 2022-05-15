@@ -2,7 +2,7 @@
     "projectId":"Pruebas-Cypress",
      "chromeWebSecurity": false,
      "modifyObstructiveCode": true,
-     "baseUrl" : "http://localhost:2368/ghost/#/signin",
+     "baseUrl" : "http://localhost:3001/ghost/#/signin",
      "user" : "p.mykoda@uniandes.edu.co",
      "password" : "12345678!A",
      "experimentalSourceRewriting": true,

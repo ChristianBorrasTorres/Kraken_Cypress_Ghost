@@ -1,10 +1,7 @@
-// previsualizarPagina.spec.js created with Cypress
-//
-// Start writing your Cypress tests below!
-// If you're unfamiliar with how Cypress works,
-// check out the link below and learn how to write your first test:
-// https://on.cypress.io/writing-first-test
+import PageObjectPages from "../../support/pageObjectPages";
+
 const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
+const pageObject = new PageObjectPages();
 var i = 0;
 var caso = 1;
 
@@ -24,37 +21,29 @@ describe('Test to create Page', () => {
         cy.clearCookies();
     })
 
-    it('Test Login into', () => {
-        cy.get('input[name=identification]').type(Cypress.config('user'));
-        cy.get('input[name="password"]').type(Cypress.config('password'));
-        cy.get('[id="ember11"]').click();
-        cy.wait(3000);
+    it('1 Test Login into', () => {
+        pageObject.login();
+        cy.screenshot();
     })
 
-    it('Test go to page and new page', () =>{
-        cy.get('a[href*="#/pages/"]').click();
-        cy.wait(2000);
-        cy.get('a[class="ember-view gh-btn gh-btn-primary view-actions-top-row"]').click();
-        cy.wait(3000);
-        
+    it('2 Test go to page and new page', () =>{
+        pageObject.goToPagesAndNewPage();
+        cy.screenshot();
     })
     
-    it('Test type title and content', () => {
-        cy.get('textarea').first().type("Title page");
-        cy.get('.koenig-editor__editor').type("Hola");
-        cy.wait(10000);
+    it('3 Test type title and content', () => {
+        pageObject.typeTitleAndContent();
+        cy.screenshot();
     })
 
-    it('Test go to preview and return', () => {
-        cy.get('button[class="gh-btn gh-editor-preview-trigger"]').click();
-        cy.wait(2000);
-        cy.get('button[class="gh-editor-back-button"]').click();
+    it('4 Test go to preview and return', () => {
+        pageObject.previewAndReturn();
+        cy.screenshot();
     });
 
-    it('Button Back to page', () => {
-        cy.get('a[href*="#/pages/"]').first().click({force: true})
-        cy.get('a[href*="#/pages/"]').first().click({force: true})
-        cy.wait(3000);
+    it('5 Button Back to page', () => {
+        pageObject.goBackToPages();
+        cy.screenshot();
     })
    
   })
