@@ -20,5 +20,17 @@
 
     "TAGNAME": "New Tag",
 
-    "NEWPOSTTITLE": "New Post"
+    "TAGTOASIGN": "Tag to asign",
+
+    "POSTTAGASIGN": "Post (asign tag)",
+
+    "TAGTOREMOVE": "Tag to remove",
+
+    "POSTREMOVETAG": "Post (remove tag)",
+
+    "TAGTOEDIT": "1 Tag to edit",
+
+    "TAGUPDATED": "(updated)",
+
+    "TAGELIMINATE": "Tag to eliminate"
 }

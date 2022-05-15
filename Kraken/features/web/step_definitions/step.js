@@ -211,7 +211,15 @@ Then("I click on post to return", async function () {
 
   });
 
+  Given('I want to create a tag', async function () {
+  });
 
+
+  Given('I want to asign a tag to a post', async function () {
+  });
+
+  Given('I want to remove a tag from a post', async function () {
+  });
 
   Then('I click on tags', async function () {
 
@@ -328,3 +336,41 @@ Then("I click on post to return", async function () {
     return await element.click();
   
   });
+
+
+  Then("I click on tag to edit", async function () {
+  
+    let element = await this.driver.$(".gh-list-row.gh-tags-list-item")
+  
+    return await element.click();
+  
+  });
+
+
+  Then('I edit tag name {kraken-string}', async function (tagName) {
+  
+    let element = await this.driver.$('.ember-text-field');
+  
+    return await element.setValue(tagName);
+  
+  });
+
+  Then("I click delete tag", async function () {
+  
+    let element = await this.driver.$(".gh-btn.gh-btn-red.gh-btn-icon")
+  
+    return await element.click();
+  
+  });
+
+
+  Then("I confirm delete tag", async function () {
+  
+    let element = await this.driver.$(".gh-btn.gh-btn-red.gh-btn-icon.ember-view")
+  
+    return await element.click();
+  
+  });
+
+
+  
