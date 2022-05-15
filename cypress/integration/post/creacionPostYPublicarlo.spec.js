@@ -1,3 +1,6 @@
+import PageObjectPost from "../../support/pageObjectPost";
+
+const pageObject = new PageObjectPost;
 const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
 var i = 0;
 var caso = 4;
@@ -18,41 +21,45 @@ context('Testing Create Post and Publish', () => {
         cy.clearCookies();
     })
 
-    it('Test Login into', () => {
-        cy.get('input[name=identification]').type(Cypress.config('user'));
-        cy.get('input[name="password"]').type(Cypress.config('password'));
-        cy.get('[id="ember11"]').click();
+    it('1 Test Login into', () => {
+        pageObject.login();
         cy.wait(3000);
+        cy.screenshot();
     })
 
-    it('Test Page create post', () => {
-        cy.get('a[href*="#/post"]').first().click({force: true});
+    it('2 Test Page create post', () => {
+        pageObject.goToPosts();
         cy.wait(2000); 
+        cy.screenshot();
     })
 
-    it('Button new post', () => {
-        cy.get('a[href*="#/editor/post"]').first().click({force: true});
+    it('3 Button new post', () => {
+        pageObject.selectNewPostButton();
         cy.wait(2000);
+        cy.screenshot();
     })
 
-    it('Test Enter Title', () => {
-        cy.get('textarea').first().type("New Title post");
-        cy.get('.koenig-editor__editor').type("Hola Mundo");
+    it('4 Test Enter Title', () => {
+        pageObject.typeTitle();
+        pageObject.typeContent();
         cy.wait(2000);
+        cy.screenshot();
     });       
    
-    it('Test Publish', () => {        
-        cy.get('div[role="button"]').first().click({force: true});
+    it('5 Test Publish', () => {     
+        pageObject.selectPublishButton();   
         cy.wait(2000);
-        cy.get('button[class="gh-btn gh-btn-black gh-publishmenu-button gh-btn-icon ember-view"]').click();
+        pageObject.publishPost();
         cy.wait(3000);
-        cy.get('button[class="gh-btn gh-btn-black gh-btn-icon ember-view"]').click();
+        pageObject.confirmPublishPost();
         cy.wait(3000);
+        cy.screenshot();
     });       
    
 
-    it('Button Back to page', () => {
-        cy.get('a[href*="#/posts"]').first().click({force: true});
+    it('6 Button Back to page', () => {
+        pageObject.goToPosts();
+        cy.screenshot();
     })
      
 })
