@@ -273,6 +273,15 @@ Then("I click on post to return", async function () {
     return await element.click();
   
   });
+
+
+  Then("I click on Post Settings again", async function () {
+  
+    let element = await this.driver.$(".settings-menu-toggle.gh-btn gh-btn-editor.gh-btn-icon only-has-icon.gh-actions-cog");
+  
+    return await element.click();
+  
+  });
   
   
   Then("I click on Tags of the Post", async function () {
@@ -313,6 +322,15 @@ Then("I click on post to return", async function () {
 
 
   Then("I remove Tag from Post", async function () {
+  
+    let element = await this.driver.$(".ember-power-select-multiple-remove-btn")
+  
+    return await element.click();
+  
+  });
+
+
+  Then("I remove Tag from the Post", async function () {
   
     let element = await this.driver.$(".ember-power-select-multiple-remove-btn")
   
