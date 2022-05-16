@@ -65,22 +65,22 @@ function feature(f, info, images){
         <div class="browser" id="test0">
             <div class="btitle">
                 <h2>Feature: ${f}</h2>
-                <p>Data: ${JSON.stringify(info[currentImage])}</p>
+                <p>Información: ${JSON.stringify(info[currentImage])}</p>
             </div>
             <div class="imgline">
                 <div class="imgcontainer">
-                    <span class="imgname">Reference</span>
+                    <span class="imgname">Versión actual</span>
                     <img class="img2" src="./../../${f}/before/${currentImage}" id="refImage" label="Reference">
                 </div>
                 
                 <div class="imgcontainer">
-                    <span class="imgname">Test</span>
+                    <span class="imgname">Version Anterior</span>
                     <img class="img2" src="./../../${f}/after/${currentImage}" id="testImage" label="Test">
                 </div>
             </div>
             <div class="imgline">
                 <div class="imgcontainer">
-                    <span class="imgname">Diff</span>
+                    <span class="imgname">Diferencia entre versiones</span>
                     <img class="imgfull" src="./../../${f}/compare/${currentImage}" id="diffImage" label="Diff">
                 </div>
             </div>
@@ -96,13 +96,13 @@ function createReport(datetime, resultInfo, currentFeature, images){
     return `
     <html>
         <head>
-            <title> VRT Report </title>
+            <title> Reporte de regresión visual </title>
             <link href="index.css" type="text/css" rel="stylesheet">
         </head>
         <body>
             <div>
-                <h1>Report for Ghost</h1>
-                <p>Executed: ${datetime}</p>
+                <h1>Reporte de la aplicación Ghost</h1>
+                <p>Fecha de ejecución: ${datetime}</p>
                 <div id="visualizer">
                     ${feature(currentFeature, resultInfo, images)}
                 </div>
