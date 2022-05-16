@@ -55,8 +55,8 @@ Para Cypress la estrategia utilizada fue tomar los screenshots al finalizar cada
 
 ## Resemble JS
 Para la realización de las pruebas de regresion visual, se procedio a:
- - Seleccionar 5 features que puedieran ser sencibles a tener cambios entre una versión y otra.
+ - Seleccionar 5 features que puedieran ser sensibles a tener cambios entre una versión y otra.
  - Ubicar las capturas de pantalla de cada feature, separadas en una carpeta por cada feature dentro de la cual habra una carpeta "before" y una carpeta "after" dentro de las cuales se ubicaran cada una de las capturas dependiendo de la versión a la que pertenezca.
  - Instalar los paquetes de resembleJS usando npm.
  - Desarrollar el script que a traves del uso de resembleJS permita compara dos capturas de pantalla correspondientes a una misma feature, generando asi una imagen que se alojara en una nueva carpeta denominada "compare", en la cual se mostrara la diferencia entre una versión y otra, asi como tambien un resumen escrito donde se muestra porcentajes de variación a nivel de dimensiones.
- - Incluir en el script funciones que permitan la generación del reporte en html, que se alojara en una nueva carpeta "results", en el que se mostrara las imagenes correspondientes a cada version, y la imagen que muestra el diferencial entre una versión y otra.
+ - Incluir en el script funciones que permitan la generación del reporte en html, que se alojara en una nueva carpeta "results", en el que se mostrara las imagenes correspondientes a cada version, y la imagen que muestra el diferencial entre una versión y otra, asi como tambien el resumen escrito sobre la variación a nivel de dimensiones.
