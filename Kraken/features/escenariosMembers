@@ -1,0 +1,121 @@
+Feature: Escenarios con los miembros
+
+@user6 @web
+Scenario: Como usuario inicio sesión y creo una página
+  Given I navigate to page "<PAGE>"
+  And I wait for 5 seconds
+  When I enter email "<USERNAME>"
+  Then I enter password "<PASSWORD>" 
+  And I wait for 2 seconds
+  Then I click on the login button
+  And I wait for 2 seconds
+  Then I click on members
+  And I wait for 2 seconds
+  Then I click on new member
+  And I wait for 2 seconds
+  Then I enter a name "<NAME>"
+  And I wait for 2 seconds
+  Then I enter a new email "<EMAIL>"
+  And I wait for 2 seconds
+  Then I save the new member
+  And I wait for 2 seconds
+  Then I click on members
+  And I wait for 5 seconds
+  Then I click on the user button
+  And I wait for 2 seconds
+  Then I click on sign out
+
+@user7 @web
+Scenario: Como usuario inicio sesión, borro a un miembro
+  Given I navigate to page "<PAGE>"
+  And I wait for 5 seconds
+  When I enter email "<USERNAME>"
+  Then I enter password "<PASSWORD>" 
+  And I wait for 2 seconds
+  Then I click on the login button
+  And I wait for 2 seconds
+  Then I click on members
+  And I wait for 2 seconds
+  Then I click on an existing member
+  And I wait for 2 seconds
+  Then I click on settings
+  And I wait for 2 seconds
+  Then I click on delete member
+  And I wait for 2 seconds
+  Then I click again on delete member
+  And I wait for 2 seconds
+  Then I click on the user button
+  And I wait for 2 seconds
+  Then I click on sign out
+
+@user8 @web
+Scenario: Como usuario inicio sesión, borro a un miembro
+  Given I navigate to page "<PAGE>"
+  And I wait for 5 seconds
+  When I enter email "<USERNAME>"
+  Then I enter password "<PASSWORD>" 
+  And I wait for 2 seconds
+  Then I click on the login button
+  And I wait for 2 seconds
+  Then I click on members
+  And I wait for 2 seconds
+  Then I click on an existing member
+  And I wait for 2 seconds
+  And I wait for 2 seconds
+  Then I enter a name "<NEWNAME>"
+  And I wait for 2 seconds
+  Then I enter a new email "<NEWEMAIL>"
+  And I wait for 2 seconds
+  Then I save the new member
+  And I wait for 2 seconds
+  Then I click on members
+  And I wait for 5 seconds
+  Then I click on the user button
+  And I wait for 2 seconds
+  Then I click on sign out
+
+@user9 @web
+Scenario: Como usuario inicio sesión, busco a un miembro y este se encuentra
+  Given I navigate to page "<PAGE>"
+  And I wait for 5 seconds
+  When I enter email "<USERNAME>"
+  Then I enter password "<PASSWORD>" 
+  And I wait for 2 seconds
+  Then I click on the login button
+  And I wait for 2 seconds
+  Then I click on members
+  And I wait for 2 seconds
+  Then I search for a member 
+  And I wait for 2 seconds
+  Then I enter a members name "<NEWNAME>"
+  And I wait for 2 seconds
+  Then I click on an existing member
+  And I wait for 2 seconds
+  Then I click on members
+  And I wait for 5 seconds
+  Then I click on the user button
+  And I wait for 2 seconds
+  Then I click on sign out
+
+@user10 @web
+Scenario: Como usuario inicio sesión, busco mi perfil y actualizo mi correo
+  Given I navigate to page "<PAGE>"
+  And I wait for 5 seconds
+  When I enter email "<USERNAME>"
+  Then I enter password "<PASSWORD>" 
+  And I wait for 2 seconds
+  Then I click on the login button
+  And I wait for 2 seconds
+  Then I click on the user button
+  And I wait for 2 seconds
+  Then I enter my profile
+  And I wait for 2 seconds
+  Then I enter my new name "<NEWNAME>"
+  And I wait for 2 seconds
+  Then I save the changes of my profile
+  And I wait for 2 seconds
+  Then I return to settings
+  And I wait for 5 seconds
+  Then I click on the user button
+  And I wait for 2 seconds
+  Then I click on sign out
