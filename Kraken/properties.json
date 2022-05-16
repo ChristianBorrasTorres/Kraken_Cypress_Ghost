@@ -32,5 +32,13 @@
 
     "TAGUPDATED": "(updated)",
 
-    "TAGELIMINATE": "Tag to eliminate"
+    "TAGELIMINATE": "Tag to eliminate",
+
+    "NAME": "Arnold",
+
+    "EMAIL": "arnold@gmail.com",
+
+    "NEWNAME": "Alfonso",
+
+    "NEWEMAIL": "alfonso@gmail.com"
 }

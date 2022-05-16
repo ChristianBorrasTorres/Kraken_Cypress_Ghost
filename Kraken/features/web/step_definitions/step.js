@@ -449,4 +449,111 @@ Then("I click on post to return", async function () {
   }
   );
 
+  Then('I click on members', async function(){
+    let element = await this.driver.$('a[href*="#/members/"]')
+    return await element.click();
+  }
+  );
+
+  Then('I click on new member', async function(){
+    let element = await this.driver.$('a[href*="#/members/new/"]')
+    return await element.click();
+  }
+  );
+
+  Then('I enter a name {kraken-string}', async function(name){
+    let element = await this.driver.$('input[name*="name"]')
+
+    return await element.setValue(name);
+  }
+  );
+
+  Then('I enter a new email {kraken-string}', async function(name){
+    let element = await this.driver.$('input[name*="email"]')
+
+    return await element.setValue(name);
+  }
+  );
+
+  Then('I save the new member', async function(){
+    let element = await this.driver.$('.gh-btn.gh-btn-primary.gh-btn-icon.ember-view')
+
+    return await element.click();
+  }
+  );
+
+  Then("I click on an existing member", async function () {
+
+    let element = await this.driver.$('.gh-list-data')
+
+    return await element.click();
+
+  });
+
+  Then("I click on settings", async function () {
+
+    let element = await this.driver.$('button[role*="button"]')
+
+    return await element.click();
+
+  });
+
+  Then("I click on delete member", async function () {
+
+    let element = await this.driver.$('.red')
+
+    return await element.click();
+
+  });
+
+  Then("I click again on delete member", async function () {
+
+    let element = await this.driver.$('.gh-btn-red')
+
+    return await element.click();
+
+  });
+
+  Then('I search for a member', async function(){
+    let element = await this.driver.$('.gh-members-header-search')
+
+    return await element.click();
+  }
+  );
+
+  Then('I enter a members name {kraken-string}', async function(newName){
+    let element = await this.driver.$('.gh-members-header-search')
+
+    return await element.setValue(newName);
+  }
+  );
+
+  Then('I enter my profile', async function(){
+    let element = await this.driver.$('a[href*="#/settings/staff/christian/"]')
+
+    return await element.click();
+  }
+  );
+
+  Then('I save the changes of my profile', async function(){
+    let element = await this.driver.$('.gh-btn')
+
+    return await element.click();
+  }
+  );
+
+  Then('I enter my new name {kraken-string}', async function(newName){
+    let element = await this.driver.$('.user-name')
+
+    return await element.setValue(newName);
+  }
+  );
+
+  Then('I return to settings', async function(){
+    let element = await this.driver.$('a[href*="#/settings/"]')
+
+    return await element.click();
+  }
+  );
+
   
