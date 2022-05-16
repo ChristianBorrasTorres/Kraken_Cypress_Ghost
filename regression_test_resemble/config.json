@@ -1,5 +1,5 @@
 {
-    "features":["asignarTag", "crearYPublicarPost", "eliminarPagina", "programarPost"],
+    "features":["asignarTag", "crearYPublicarPost", "eliminarPagina", "programarPost", "quitarTags"],
     "options":{
         "output": {
             "errorColor": {

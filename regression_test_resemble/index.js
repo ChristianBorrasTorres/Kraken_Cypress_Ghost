@@ -85,6 +85,8 @@ function feature(f, info, images){
                 </div>
             </div>
         </div>
+        <br/>
+        <br/>
         <hr>`
     }
     return html;
