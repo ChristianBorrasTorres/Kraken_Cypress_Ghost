@@ -51,8 +51,6 @@ context('Testing Create Post and Publish', () => {
         cy.wait(2000);
         pageObject.publishPost();
         cy.wait(3000);
-        pageObject.confirmPublishPost();
-        cy.wait(3000);
         cy.screenshot();
     });       
    

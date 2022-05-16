@@ -1,6 +1,6 @@
 {
 
-    "PAGE" : "http://localhost:2368/ghost/#/signin",
+    "PAGE" : "http://localhost:3001/ghost/#/signin",
 
     "USERNAME": "p.mykoda@uniandes.edu.co",
 

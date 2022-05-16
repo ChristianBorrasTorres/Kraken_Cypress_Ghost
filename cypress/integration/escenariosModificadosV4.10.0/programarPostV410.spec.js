@@ -1,11 +1,11 @@
 import PageObjectPost from "../../support/pageObjectPost";
 
-const pageObject = new PageObjectPost;
+const pageObject = new PageObjectPost();
 const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
 var i = 0;
 var caso = 4;
 
-context('Testing Create Post and Publish', () => { 
+context('Testing Create Post, Publish and schedule', () => { 
 
     before(() => {
         cy.visit('/#/signin');
@@ -45,20 +45,27 @@ context('Testing Create Post and Publish', () => {
         cy.wait(2000);
         cy.screenshot();
     });       
-   
-    it('5 Test Publish', () => {     
-        pageObject.selectPublishButton();   
+
+    it('5 Test Schedule Publish', () => {
+        pageObject.selectPublishButton();
         cy.wait(2000);
-        pageObject.publishPost();
+        pageObject.selectSchedulePublish();
         cy.wait(3000);
-        pageObject.confirmPublishPost();
+        cy.screenshot();
+    });
+   
+    it('6 Test Publish', () => {        
+        pageObject.publishPost();
         cy.wait(3000);
         cy.screenshot();
     });       
+
+  
    
 
-    it('6 Button Back to page', () => {
+    it('7 Button Back to page', () => {
         pageObject.goToPosts();
+        cy.wait(3000);
         cy.screenshot();
     })
      

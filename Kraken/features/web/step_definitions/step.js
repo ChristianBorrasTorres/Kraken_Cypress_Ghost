@@ -273,6 +273,15 @@ Then("I click on post to return", async function () {
     return await element.click();
   
   });
+
+
+  Then("I click on Post Settings again", async function () {
+  
+    let element = await this.driver.$(".settings-menu-toggle.gh-btn gh-btn-editor.gh-btn-icon only-has-icon.gh-actions-cog");
+  
+    return await element.click();
+  
+  });
   
   
   Then("I click on Tags of the Post", async function () {
@@ -313,6 +322,15 @@ Then("I click on post to return", async function () {
 
 
   Then("I remove Tag from Post", async function () {
+  
+    let element = await this.driver.$(".ember-power-select-multiple-remove-btn")
+  
+    return await element.click();
+  
+  });
+
+
+  Then("I remove Tag from the Post", async function () {
   
     let element = await this.driver.$(".ember-power-select-multiple-remove-btn")
   
@@ -372,5 +390,63 @@ Then("I click on post to return", async function () {
   
   });
 
+  Given('I want preview a post', async function(){
+  });
+
+  Given('I want schedule a post', async function(){
+  });
+
+  Given('I want publish a post', async function(){
+  });
+
+  Given('I want to filter posts', async function(){
+  });
+  
+  Then('I click on the publish button', async function(){
+    let element = await this.driver.$('.gh-publishmenu-trigger')
+
+    return await element.click();
+  }
+  );
+
+  Then('I click on the schedule radio button', async function(){
+    let element = await this.driver.$('.gh-date-time-picker-time ')
+
+    return await element.click();
+  }
+  );
+
+  Then('I click on the schedule button', async function(){
+    let element = await this.driver.$('.gh-publishmenu-button.gh-btn-icon.ember-view')
+
+    return await element.click();
+  }
+  );
+  Then('I click on the confirm button', async function(){
+    let element = await this.driver.$('.gh-btn.gh-btn-black.gh-btn-icon.ember-view')
+
+    return await element.click();
+  }
+  );
+  Then('I click on the publish button 2', async function(){
+    let element = await this.driver.$('.gh-publishmenu-button.gh-btn-icon.ember-view')
+
+    return await element.click();
+  }
+  );
+
+  Then('I click on all posts', async function(){
+    let element = await this.driver.$('.ember-view.ember-basic-dropdown-trigger.ember-power-select-trigger.gh-contentfilter-menu-trigger')
+
+    return await element.click();
+  }
+  );
+
+  Then('I click on published posts', async function(){
+    let element = await this.driver.$('li[data-option-index="2"]')
+
+    return await element.click();
+  }
+  );
 
   

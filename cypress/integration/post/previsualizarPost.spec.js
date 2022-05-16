@@ -1,61 +1,62 @@
-// previsualizarPost.spec.js created with Cypress
-//
-// Start writing your Cypress tests below!
-// If you're unfamiliar with how Cypress works,
-// check out the link below and learn how to write your first test:
-// https://on.cypress.io/writing-first-test
-const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
+import PageObjectPost from "../../support/pageObjectPost";
+
+const pageObject = new PageObjectPost();
+const cookieSessionName =
+  Cypress.env("cookieSessionName") || "ghost-admin-api-session";
 var i = 0;
 var caso = 4;
 
-context('Testing Preview Post', () => { 
+context("Testing Preview Post", () => {
+  before(() => {
+    cy.visit("/#/signin");
+    cy.wait(3000);
+  });
 
-    before(() => {
-        cy.visit('/#/signin');
-        cy.wait(3000);
-    })
+  beforeEach(() => {
+    Cypress.Cookies.preserveOnce(cookieSessionName);
+    i = i + 1;
+  });
 
-    beforeEach(() => {        
-        Cypress.Cookies.preserveOnce(cookieSessionName);
-        i = i +1;
-    })
+  after(() => {
+    cy.clearCookies();
+  });
 
-    after( () => {
-        cy.clearCookies();
-    })
+  it("1 Test Login into", () => {
+    pageObject.login();
+    cy.wait(3000);
+    cy.screenshot();
+  });
 
-    it('Test Login into', () => {
-        cy.get('input[name=identification]').type(Cypress.config('user'));
-        cy.get('input[name="password"]').type(Cypress.config('password'));
-        cy.get('[id="ember11"]').click();
-        cy.wait(3000);
-    })
+  it("2 Test Page create post", () => {
+    pageObject.goToPosts();
+    cy.wait(2000);
+    cy.screenshot();
+  });
 
-    it('Test Page create post', () => {
-        cy.get('a[href*="#/post"]').first().click({force: true});
-        cy.wait(2000); 
-    })
+  it("3 Button new post", () => {
+    pageObject.selectNewPostButton();
+    cy.wait(2000);
+    cy.screenshot();
+  });
 
-    it('Button new post', () => {
-        cy.get('a[href*="#/editor/post"]').first().click({force: true});
-        cy.wait(2000);
-    })
+  it("4 Test Enter Title", () => {
+    pageObject.typeTitle();
+    pageObject.typeContent();
+    cy.wait(2000);
+    cy.screenshot();
+  });
 
-    it('Test Enter Title', () => {
-        cy.get('textarea').first().type("New Title post");
-        cy.get('.koenig-editor__editor').type("Hola Mundo");
-        cy.wait(2000);
-    });       
+  it("5 Test Preview post", () => {
+    pageObject.selectPreviewButton();
+    //cy.get('div.button[class="gn-btn gh-editor-preview-trigger"]').click();
+    cy.wait(5000);
+    pageObject.backNewPost();
+    cy.screenshot();
+  });
 
-    it('Test Preview post', () => {
-        cy.get('section.flex > :nth-child(1) > .gh-btn > span').click();
-        //cy.get('div.button[class="gn-btn gh-editor-preview-trigger"]').click();
-        cy.wait(5000);
-        cy.get('button[class="gh-editor-back-button"]').click();
-
-    });
-
-
-    
-
-})
+  it("6 Back to Post", () => {
+    pageObject.goToPosts();
+    cy.wait(2000);
+    cy.screenshot();
+  });
+});
