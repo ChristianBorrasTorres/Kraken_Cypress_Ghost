@@ -26,15 +26,17 @@ describe('Testing delete Page', () => {
         cy.screenshot();
     })
 
-    it('Test go to page', () =>{
+    it('2 Test go to page', () =>{
         pageObject.goToPages();
         pageObject.goToEditPage();
         cy.wait(3000);
+        cy.screenshot();
     })
     
-    it('Test click page-settings and delete', () => {
+    it('3 Test click page-settings and delete', () => {
         pageObject.goToPageSettings();
         pageObject.deletePage();
+        cy.screenshot();
     })
    
   })
