@@ -7,7 +7,7 @@ const memberMail = faker.internet.email();
 var i = 0;
 var caso = 1;
 
-describe('Test to create member', () => {
+describe('Test to filter member by name', () => {
 
     before(() => {
         cy.visit('/#/signin')

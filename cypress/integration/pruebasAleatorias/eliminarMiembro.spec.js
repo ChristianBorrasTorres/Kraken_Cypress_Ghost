@@ -7,7 +7,7 @@ const memberName = faker.name.firstName();
 var i = 0;
 var caso = 1;
 
-describe('Test to create member', () => {
+describe('Test to delete member', () => {
 
     before(() => {
         cy.visit('/#/signin')
