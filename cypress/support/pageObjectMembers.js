@@ -35,8 +35,21 @@ class PageObjectMembers {
         cy.get('button[class="gh-btn gh-btn-red gh-btn-icon ember-view"]').contains('Delete member').click();
     }
 
+    selectMember() {
 
-    class="ember-view gh-list-data"
+    }
+
+    editarNote() {
+        return cy.get('textarea[id="member-note"]');
+    }
+
+    clickFilter() {
+        cy.get('svg[viewBox="0 0 18 18"]').click();
+    }
+
+    changeFilter() {
+        cy.xpath('//span[@class="gh-select"]').first().click({force: true});        
+    }
 
 }
     export default PageObjectMembers
