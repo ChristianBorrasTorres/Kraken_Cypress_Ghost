@@ -35,8 +35,8 @@ describe('Test to create Page', () => {
     })
     
     it('3 Test type title and content', () => {
-        cy.get('textarea').first().type(faker.lorem.paragraphs());
-        cy.wait(30000);
+        cy.get('textarea').first().type(faker.lorem.paragraph(7));
+        cy.wait(2000);
         cy.get('.koenig-editor__editor').type(faker.random.word());
         cy.wait(2000);
         cy.screenshot();
@@ -45,6 +45,11 @@ describe('Test to create Page', () => {
     it('4 Button Back to page', () => {
         pageObject.goBackToPages();
         cy.screenshot();
+    })
+
+    it('5 Button leave', () => {
+        cy.xpath('//button/span[text()="Leave"]').click();
+        cy.wait(2000);
     })
    
   })
