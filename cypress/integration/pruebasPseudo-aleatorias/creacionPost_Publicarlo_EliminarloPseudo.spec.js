@@ -7,8 +7,27 @@ const pageObject = new PageObjectPost;
 const cookieSessionName = Cypress.env('cookieSessionName') || "ghost-admin-api-session"
 var i = 0;
 var caso = 4;
-var titleFake = '';
-var contentFake = '';
+
+// Retorna un entero aleatorio entre min (incluido) y max (excluido)
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+//Se programa para que Faker cree los mismos datos cuando se ejecuta
+faker.seed(1011);
+
+//Se crea un data pool con 100 titulos y paragrafos aleatorios
+const titles = [];
+const paragraphs = [];
+
+for (let i = 0; i < 100; i++){
+    titles[i] = faker.random.word();
+    paragraphs[i] = faker.lorem.paragraph();
+}
+
+//Se definen dos variables con enteros para sacar valores aleatorios del data pool
+const title = getRandomInt(0,99);
+const paragraph = getRandomInt(0,99);
 
 context('Testing Create Post and Publish', () => { 
 
@@ -45,12 +64,8 @@ context('Testing Create Post and Publish', () => {
     })
 
     it('4 Test Enter Title', () => {
-        //pageObject.typeTitle();
-        titleFake = faker.name.jobTitle();
-        cy.get("textarea").first().type(titleFake);
-        //pageObject.typeContent();
-        contentFake = faker.lorem.paragraph();
-        cy.get(".koenig-editor__editor").type(contentFake);
+        cy.get("textarea").first().type(titles[title]);
+        cy.get(".koenig-editor__editor").type(paragraphs[paragraph]);
         cy.wait(2000);
         cy.screenshot();
     });       
@@ -72,12 +87,12 @@ context('Testing Create Post and Publish', () => {
     });
 
     it('7 Check post', () => {
-        cy.xpath('//h3[text()="'+titleFake+'"]').first().click();
+        cy.xpath('//h3[text()="'+titles[title]+'"]').first().click();
         cy.wait(3000);
         /*cy.xpath('//textarea/text()').its('0.textContent')
         .should('equal', titleFake);*/
         cy.get('p').then(($header)=>{
-            expect($header[0].innerText).to.equal(contentFake);
+            expect($header[0].innerText).to.equal(paragraphs[paragraph]);
         });
         cy.wait(2000);
         
@@ -95,13 +110,10 @@ context('Testing Create Post and Publish', () => {
     });
 
     it('9 Check post deleted', () => {
-        cy.xpath('//h3[text()="'+titleFake+'"]').should('not.exist');
+        cy.xpath('//h3[text()="'+titles[title]+'"]').should('not.exist');
         cy.wait(2000);
         
     });
 
 
-
-
-     
 })
