@@ -11,7 +11,7 @@ Por favor hacer clic en el siguiente enlace https://github.com/ChristianBorrasTo
 - Clonar este repositorio en una carpeta vacía.
 - Abra una terminal y ejecute el comando npm install -g cypress, si aún no lo tiene instalado globalmente en su computador.
 - En el mismo terminal ejecutar npm install, (en caso de no funcionar el xpath por favor correr el comando **npm i cypress-xpath** o **npm install -D cypress-xpath**; en caso de no funcionar faker correr el comando **npm install @faker-js/faker --save-dev**), realizar estos comandos previa ejecución u otro paso.
-- En el archivo cypress.json cambiar el usuario y contraseña del GHOST local. Adicionalmente revisar el puerto sobre el cual se tiene desplegada la aplicación de Ghost, para el presente caso es el puerto 3001:
+- En el archivo **cypress.json** cambiar el usuario y contraseña del GHOST local. Adicionalmente revisar el puerto sobre el cual se tiene desplegada la aplicación de Ghost, para el presente caso es el puerto 3001:
 ![cypressjson](https://user-images.githubusercontent.com/98656753/169742678-d7fa5380-51c0-4e31-aef3-d1c2455c8fff.png)
 - Ejecute en la terminal desde la carpeta Kraken_Cypress_Ghost el comando cypress open
 - Este comando le permitirá visualizar la interfaz gráfica de Cypress, así como las pruebas del repositorio.
@@ -20,5 +20,5 @@ Por favor hacer clic en el siguiente enlace https://github.com/ChristianBorrasTo
 ![cypresscarpetas](https://user-images.githubusercontent.com/98656753/169743618-49109541-ad84-4c57-b093-1cb9c6340e06.png)
 Y son por ejemplo: ajustesIntegraciones.spec.js, creacionPagina.spec.js, etc...
 
-*Tener en cuenta que algunas de las pruebas generan bugs, por lo que puede haber errores en Cypress, estas se encuentran en el registro de incidencia del repositorio (Issues).
+*Tener en cuenta que algunas de las pruebas generan bugs, por lo que puede haber errores en Cypress, estas se encuentran en el registro de incidencias del repositorio (Issues).
 
