@@ -14,7 +14,7 @@ function getRandomInt(min, max) {
 //Se programa para que Faker cree los mismos datos cuando se ejecuta
 faker.seed(1001);
 
-//Se crea un data pool con 10 nombres y correos aleatorios
+//Se crea un data pool con 100 nombres y correos aleatorios
 const names = [];
 const mails = [];
 

@@ -12,25 +12,22 @@ function getRandomInt(min, max) {
   }
 
 //Se programa para que Faker cree los mismos datos cuando se ejecuta
-faker.seed(1002);
+faker.seed(1003);
 
-//Se crea un data pool con 100 nombres, correos, y paragrafos aleatorios
+//Se crea un data pool con 100 nombres y correos aleatorios
 const names = [];
 const mails = [];
-const paragraphs = [];
 
 for (let i = 0; i < 100; i++){
     names[i] = faker.name.firstName();
     mails[i] = faker.internet.email();
-    paragraphs[i] = faker.lorem.paragraph();
 }
 
 //Se definen dos variables con enteros para sacar valores aleatorios del data pool
 const name = getRandomInt(0,99);
 const mail = getRandomInt(0,99);
-const paragraph = getRandomInt(0,99);
 
-describe('Test to edit member', () => {
+describe('Test to filter member by name', () => {
 
     before(() => {
         cy.visit('/#/signin')
@@ -81,27 +78,16 @@ describe('Test to edit member', () => {
         cy.screenshot();
     })
 
-    it('6 Select member again', () => {
-        cy.get('a[class="ember-view gh-list-data"]').contains(names[name]).click();
-        cy.wait(2000);
+    it('6 Filter member by e-mail', () => {
+        pageObject.clickFilter()
+        cy.wait(1000);
+        cy.xpath('//select').first().select('Email');
+        cy.wait(1000);
+        cy.xpath('//input[@class="gh-input"]').type(mails[mail]);
+        cy.get('button[class="gh-btn gh-btn-primary"]').click();
+        cy.wait(500);
         cy.screenshot();
     })
 
-    it(' Edit member name and add note', () => {
-        pageObject.selectTextfieldMemberName().clear({ force: true });
-        pageObject.selectTextfieldMemberName().type(names[name+1], { force: true });
-        cy.wait(2000);
-        pageObject.editarNote().type(paragraphs[paragraph]);
-        cy.wait(2000);
-        pageObject.saveMemberChanges();
-        cy.wait(2000);
-        cy.screenshot();
-    })
-
-    it('5 Button Back to Members', () => {
-        pageObject.goToMembers();
-        cy.wait(2000);
-        cy.screenshot();
-    })
 
 })

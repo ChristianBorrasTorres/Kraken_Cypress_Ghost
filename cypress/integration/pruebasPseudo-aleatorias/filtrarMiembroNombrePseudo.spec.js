@@ -12,9 +12,9 @@ function getRandomInt(min, max) {
   }
 
 //Se programa para que Faker cree los mismos datos cuando se ejecuta
-faker.seed(1003);
+faker.seed(1004);
 
-//Se crea un data pool con 10 nombres y correos aleatorios
+//Se crea un data pool con 100 nombres y correos aleatorios
 const names = [];
 const mails = [];
 
@@ -27,7 +27,7 @@ for (let i = 0; i < 100; i++){
 const name = getRandomInt(0,99);
 const mail = getRandomInt(0,99);
 
-describe('Test to filter member by name', () => {
+describe('Test to filter member by e-mail', () => {
 
     before(() => {
         cy.visit('/#/signin')
@@ -78,14 +78,11 @@ describe('Test to filter member by name', () => {
         cy.screenshot();
     })
 
-    it('6 Filter member by e-mail', () => {
+    it('6 Filter member', () => {
         pageObject.clickFilter()
         cy.wait(1000);
-        cy.xpath('//select').first().select('Email');
-        cy.wait(1000);
-        cy.xpath('//input[@class="gh-input"]').type(mails[mail]);
+        cy.get('input[aria-label="Name filter"]').type(names[name]);
         cy.get('button[class="gh-btn gh-btn-primary"]').click();
-        cy.wait(500);
         cy.screenshot();
     })
 
