@@ -1,5 +1,5 @@
 # Kraken_Cypress_Ghost
-Séptima semana de la materia Pruebas Automatizadas de Software, en la que se realizaran pruebas sobre las versiones de Ghost 4.47.4(latest) con la herramienta Cypress implementando las estrategias para validar datos en los formularios de la aplicación y el manejo de entradas inválidas, haciendo uso de mecanismos para generar datos(Mockaroo, Faker).
+Séptima semana de la materia Pruebas Automatizadas de Software, en la que se realizaran pruebas sobre las versiones de Ghost latest en Docker con la herramienta Cypress implementando las estrategias para validar datos en los formularios de la aplicación y el manejo de entradas inválidas, haciendo uso de mecanismos para generar datos(Mockaroo, Faker).
 ## 10 defectos por manejo de datos inválidos en el sistema de  registro de incidencia del grupo
 Estas se encuentran en los issues de este repositorio.
 ## Descripción de las estrategias usadas
