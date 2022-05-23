@@ -7,7 +7,7 @@ class PageObjectPages {
     }
 
     goToPages() {
-        cy.get('a[href*="#/pages/"]').first().click();
+        cy.xpath('//a[text()="Pages"]').first().click();
         cy.wait(2000);
     }
 
@@ -19,7 +19,7 @@ class PageObjectPages {
     }
 
     goToPage() {
-        cy.get('a[href*="#/pages/"]').first().click();
+        cy.xpath('//a[text()="Pages"]').first().click();
         cy.wait(2000);
 
         cy.get('li.gh-list-row.gh-posts-list-item').first().within(() => 
@@ -42,13 +42,13 @@ class PageObjectPages {
     }
 
     goToPagesAndNewPage() {
-        cy.get('a[href*="#/pages/"]').click();
+        cy.xpath('//a[text()="Pages"]').click();
         cy.wait(2000);
-        cy.get('a[href="#/editor/page/"]').click();
+        cy.xpath('//span[text()="New page"]').click();
         //cy.get('#ember88 > span')
         cy.wait(3000);
     }
-
+    
     typeTitleAndContent() {
         cy.get('textarea').first().type("Title page");
         cy.wait(2000);
@@ -57,7 +57,7 @@ class PageObjectPages {
     }
 
     goBackToPages() {
-        cy.get('a[href*="#/pages/"]').first().click({force: true});
+        cy.xpath('//span[text()="Pages"]').first().click({force: true});
         cy.wait(3000);
     }
 
