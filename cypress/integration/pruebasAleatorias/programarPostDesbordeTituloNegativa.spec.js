@@ -44,7 +44,7 @@ context("Testing Create Post, Publish and schedule", () => {
 
   it("4 Test Enter Title", () => {
     //pageObject.typeTitle();
-    titleFake = faker.lorem.paragraph(60);
+    titleFake = faker.lorem.paragraph(80);
     cy.get("textarea").first().type(titleFake);
     //pageObject.typeContent();
     contentFake = faker.lorem.paragraph();
