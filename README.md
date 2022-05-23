@@ -1,6 +1,6 @@
 # Kraken_Cypress_Ghost
 Sexta semana de la materia Pruebas Automatizadas de Software, en la que se realizaran pruebas sobre las versiones de Ghost 4.47.2 (versión sobre la que se trabajó en la semana anterior) y 4.10.0 con las herramientas Kraken y Cypress implementando la captura de interfaz gráfica para realizar pruebas de regresión visual de 5 escenarios seleccionados, esto con la herramienta de Resemble JS. 
-## 5 diferencias visuales en el sistema de  registro de incidencia del grupo
+## 10 defectos por manejo de datos inválidos en el sistema de  registro de incidencia del grupo
 Estas se encuentran en los issues de este repositorio.
 ## Funcionalidades bajo prueba:
 - Crear una página con estado publicado, los pasos para ello son realizar el login, crear la página con su nombre y algún tipo de contenido, para finalmente regresar a la pantalla principal garantizando su creación.
