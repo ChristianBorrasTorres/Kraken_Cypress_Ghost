@@ -38,7 +38,15 @@ describe('Testing Page - Create_And_Publish', () => {
         cy.get('.koenig-editor__editor').type(faker.lorem.paragraphs());
         cy.wait(2000);
         cy.xpath('//div/span[text()="Publish"]').should('not.exist');
-    })    
+    });
+
+    it("4 Back to Post", () => {
+        pageObject.goBackToPages();
+        cy.wait(2000);
+        cy.xpath('//button/span[text()="Leave"]').first().click();
+        cy.wait(2000);
+        cy.screenshot();
+      });
    
   })
 
