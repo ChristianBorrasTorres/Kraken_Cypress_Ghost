@@ -9,7 +9,7 @@ Por favor hacer clic en el siguiente enlace https://github.com/ChristianBorrasTo
 - Hacer clic en el siguiente link buscar su sistema operativo e instalar Docker: https://docs.docker.com/desktop/mac/install/
 - Luego desde una terminal correr el comando docker run -d -e url=http://localhost:3001 -p 3001:2368 --name ghost_latest ghost:latest.
 - Clonar este repositorio en una carpeta vacía.
-- Abra un terminal y ejecute el comando npm install -g cypress, si aún no lo tiene instalado globalmente en su computador.
+- Abra una terminal y ejecute el comando npm install -g cypress, si aún no lo tiene instalado globalmente en su computador.
 - En el mismo terminal ejecutar npm install, (en caso de no funcionar el xpath por favor correr el comando **npm i cypress-xpath** o **npm install -D cypress-xpath**; en caso de no funcionar faker correr el comando **npm install @faker-js/faker --save-dev**), realizar estos comandos previa ejecución u otro paso.
 - En el archivo cypress.json cambiar el usuario y contraseña del GHOST local. Adicionalmente revisar el puerto sobre el cual se tiene desplegada la aplicación de Ghost, para el presente caso es el puerto 3001:
 ![cypressjson](https://user-images.githubusercontent.com/98656753/169742678-d7fa5380-51c0-4e31-aef3-d1c2455c8fff.png)
