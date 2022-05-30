@@ -34,6 +34,8 @@ Para Cypress la estrategia utilizada fue tomar los screenshots al finalizar cada
 ![image](https://user-images.githubusercontent.com/98660561/168518672-7ad6bb35-ec72-4fc6-8525-0822572ecccc.png)
 
 ## Kraken
+Los escenarios se marcaron como comentario dado que kraken no permite correrlos conjuntamente, **se debe tener en cuenta que son más de un escenario por archivo**, como se observa a continuación:
+![escenario](https://user-images.githubusercontent.com/98656753/170919060-e462f24a-ad48-4d25-9dc1-5edf0b0e1be7.png)
 ### Instrucciones para ejecutar los escenarios en Kraken
 - Clonar este repositorio en una carpeta vacía.
 - Ejecutar el comando npm init para que la carpeta node_modules se genere.
