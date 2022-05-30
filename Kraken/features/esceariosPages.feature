@@ -19,13 +19,9 @@ Scenario: Como usuario inicio sesión y creo una página
   And I wait for 2 seconds
   Then I enter a page content "<PAGECONTENT>"
   And I wait for 10 seconds
-  Then I click on pages to return
-  And I wait for 5 seconds
-  And I wait for 5 seconds
-  Then I click on the user button
-  And I wait for 2 seconds
-  Then I click on sign out
-  And I wait for 5 seconds
+  Then I click on pages to return 2
+
+
 
 @user2 @web
 Scenario: Como usuario inicio sesión, creo una página y la publico
@@ -49,14 +45,8 @@ Scenario: Como usuario inicio sesión, creo una página y la publico
   Then I click on publish button
   Then I click on publish
   And I wait for 5 seconds
-  Then I click on pages to return
-  And I wait for 5 seconds
-  And I wait for 5 seconds
-  Then I click on the user button
-  And I wait for 2 seconds
-  Then I click on sign out
-  And I wait for 5 seconds
-
+  Then I click on pages to return 2
+  
 @user3 @web
 Scenario: Como usuario inicio sesión, creo una página y la actualizo
   Given I navigate to page "<PAGE>"
@@ -76,12 +66,9 @@ Scenario: Como usuario inicio sesión, creo una página y la actualizo
   And I wait for 2 seconds
   Then I enter a page content "<PAGECONTENT>"
   And I wait for 10 seconds
-  Then I click on pages to return
-  And I wait for 5 seconds
-  Then I click on the user button
-  And I wait for 2 seconds
-  Then I click on sign out
-  And I wait for 5 seconds
+  Then I click on pages to return 2
+  
+
 
 @user4 @web
 Scenario: Como usuario inicio sesión, creo una página y la elimino
@@ -101,12 +88,7 @@ Scenario: Como usuario inicio sesión, creo una página y la elimino
   Then I click on delete
   And I wait for 2 seconds
   Then I click on delete again
-  And I wait for 5 seconds
-  And I wait for 5 seconds
-  Then I click on the user button
-  And I wait for 2 seconds
-  Then I click on sign out
-  And I wait for 5 seconds
+  
 
 @user5 @web
 Scenario: Como usuario inicio sesión, hago borrador de una página y previsualizo
@@ -131,11 +113,9 @@ Scenario: Como usuario inicio sesión, hago borrador de una página y previsuali
   And I wait for 10 seconds
   Then I click on back button
   And I wait for 10 seconds
-  Then I click on pages to return
-  And I wait for 5 seconds
-  Then I click on the user button
-  And I wait for 2 seconds
-  Then I click on sign out
-  And I wait for 5 seconds
+  Then I click on pages to return 2
+  
 
 
+
+  

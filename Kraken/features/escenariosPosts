@@ -1,5 +1,4 @@
 Feature: Posts
-
 @user1 @web
 Scenario: Como usuario inicio sesión, hago borrador de una página y previsualizo
   Given I want preview a post
@@ -26,7 +25,6 @@ Scenario: Como usuario inicio sesión, hago borrador de una página y previsuali
   And I wait for 10 seconds
   Then I click on pages to return
   And I wait for 2 seconds
-
 
 @user2 @web
 Scenario: Como usuario inicio sesión, hago post y programo publicacion
@@ -56,8 +54,9 @@ Scenario: Como usuario inicio sesión, hago post y programo publicacion
   And I wait for 2 seconds
   Then I click on the confirm button
   And I wait for 2 seconds
-  Then I click on post
+  Then I click on pages to return
   And I wait for 2 seconds
+
 
 @user3 @web
 Scenario: Como usuario inicio sesión, hago post y publico
@@ -83,11 +82,11 @@ Scenario: Como usuario inicio sesión, hago post y publico
   And I wait for 2 seconds
   Then I click on the publish button 2
   And I wait for 2 seconds
-  Then I click on the confirm button
+  Then I click on the confirm button 2
   And I wait for 2 seconds
-  Then I click on post
+  Then I click on pages to return
   And I wait for 2 seconds
-
+  
 @user4 @web
 Scenario: Como usuario inicio sesión, voy a posts y filtro por publicados
   Given I want to filter posts
