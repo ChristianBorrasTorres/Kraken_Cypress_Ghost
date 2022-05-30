@@ -1,7 +1,7 @@
 # Kraken_Cypress_Ghost
-Séptima semana de la materia Pruebas Automatizadas de Software, en la que se realizaran pruebas sobre las versiones de Ghost latest en Docker con la herramienta Cypress implementando las estrategias para validar datos en los formularios de la aplicación y el manejo de entradas inválidas, haciendo uso de mecanismos para generar datos(Mockaroo, Faker).
-## 10 defectos por manejo de datos inválidos en el sistema de  registro de incidencia del grupo
-Estas se encuentran en los issues de este repositorio.
+Octava semana de la materia Pruebas Automatizadas de Software, en la que se realizaran pruebas sobre las versiones de Ghost latest en Docker con las herramientas  Cypress, ResembleJs, entre otras, implementando las estrategias para hacer pruebas manuales, validar datos en los formularios de la aplicación y el manejo de entradas inválidas, haciendo uso de mecanismos para generar datos(Mockaroo, Faker), entre otros tipos de pruebas.
+## 20 issues para la versión bajo pruebas
+Estas se encuentran en los issues de este repositorio, o en el siguiente enlace: https://github.com/ChristianBorrasTorres/Kraken_Cypress_Ghost/issues.
 ## Descripción de las estrategias usadas
 Por favor hacer clic en el siguiente enlace https://github.com/ChristianBorrasTorres/Kraken_Cypress_Ghost/wiki/Descripcion-de-las-estrategias-Utilizadas, sin embargo, si hay algún problema por favor remitirse a la Wiki de este repositorio, alli se podrá encontrar la descripción de las estrategias usadas.
 ## Cypress
