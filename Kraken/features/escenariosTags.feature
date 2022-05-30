@@ -21,16 +21,9 @@ Scenario: Como usuario inicio sesión y creo un tag
   Then I click on tags
   And I wait for 4 seconds
 
-@user2 @web
-Scenario: Como usuario inicio sesión, creo un tag, y lo asigno a un post
+# Escenario 2: Como usuario inicio sesión, creo un tag, y lo asigno a un post
   Given I want to asign a tag to a post
   When I navigate to page "<PAGE>"
-  And I wait for 5 seconds
-  When I enter email "<USERNAME>"
-  Then I enter password "<PASSWORD>" 
-  And I wait for 2 seconds
-  Then I click on the login button
-  And I wait for 2 seconds
   Then I click on tags
   And I wait for 2 seconds
   Then I click on new tag
@@ -57,16 +50,9 @@ Scenario: Como usuario inicio sesión, creo un tag, y lo asigno a un post
   And I wait for 4 seconds
 
 
-@user3 @web
-Scenario: Como usuario inicio sesión, creo un tag, lo asigno a un post, y lo quito otra vez
+# Escenario 3: Como usuario inicio sesión, creo un tag, lo asigno a un post, y lo quito otra vez
   Given I want to remove a tag from a post
   When I navigate to page "<PAGE>"
-  And I wait for 5 seconds
-  When I enter email "<USERNAME>"
-  Then I enter password "<PASSWORD>" 
-  And I wait for 2 seconds
-  Then I click on the login button
-  And I wait for 2 seconds
   Then I click on tags
   And I wait for 2 seconds
   Then I click on new tag
@@ -103,16 +89,10 @@ Scenario: Como usuario inicio sesión, creo un tag, lo asigno a un post, y lo qu
   And I wait for 4 seconds
 
 
-@user4 @web
-Scenario: Como usuario inicio sesión, creo un tag, y lo edito
+# Escenario 4: Como usuario inicio sesión, creo un tag, y lo edito
   Given I want to create a tag
   When I navigate to page "<PAGE>"
   And I wait for 3 seconds
-  Then I enter email "<USERNAME>"
-  Then I enter password "<PASSWORD>" 
-  And I wait for 2 seconds
-  Then I click on the login button
-  And I wait for 2 seconds
   Then I click on tags
   And I wait for 2 seconds
   Then I click on new tag
@@ -132,16 +112,10 @@ Scenario: Como usuario inicio sesión, creo un tag, y lo edito
   Then I click on tags
   And I wait for 4 seconds
 
-@user5 @web
-Scenario: Como usuario inicio sesión, creo un tag, y lo elimino
+# Escenario 5: Como usuario inicio sesión, creo un tag, y lo elimino
   Given I want to create a tag
   When I navigate to page "<PAGE>"
   And I wait for 3 seconds
-  Then I enter email "<USERNAME>"
-  Then I enter password "<PASSWORD>" 
-  And I wait for 2 seconds
-  Then I click on the login button
-  And I wait for 2 seconds
   Then I click on tags
   And I wait for 2 seconds
   Then I click on new tag
