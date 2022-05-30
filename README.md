@@ -1,5 +1,11 @@
 # Kraken_Cypress_Ghost
-Octava semana de la materia Pruebas Automatizadas de Software, en la que se realizaran pruebas sobre las versiones de Ghost latest en Docker con las herramientas  Cypress, ResembleJs, entre otras, implementando las estrategias para hacer pruebas manuales, validar datos en los formularios de la aplicación y el manejo de entradas inválidas, haciendo uso de mecanismos para generar datos(Mockaroo, Faker), entre otros tipos de pruebas.
+Octava semana de la materia Pruebas Automatizadas de Software, en la que se realizaran pruebas sobre las versiones de Ghost 4.47.4 en Docker con las herramientas  Cypress, ResembleJs, entre otras, implementando las estrategias para hacer pruebas manuales, validar datos en los formularios de la aplicación y el manejo de entradas inválidas, haciendo uso de mecanismos para generar datos(Mockaroo, Faker), entre otros tipos de pruebas.
+## Estrategia de pruebas semana ocho y inventario de pruebas manuales exploratorias
+Estas se encuentran en la carpeta raiz del proyecto, *el video se encuentra en el documento de la estrategia de pruebas*
+![estrategiaEinventario](https://user-images.githubusercontent.com/98656753/170916988-1c7949af-2b95-4016-ad5f-e16eb5cb4914.png)
+O también ir al siguiente enlace: https://uniandes-my.sharepoint.com/:f:/g/personal/c_borras_uniandes_edu_co/ElJvRSJ341xNghvwvG0p_AUBRedMwhU8w8dr7p0pOH1qQQ?e=yOT2kW
+## Video semana ocho
+Enlace del video: https://youtu.be/kiXp4smj91E
 ## 20 issues para la versión bajo pruebas
 Estas se encuentran en los issues de este repositorio, o en el siguiente enlace: https://github.com/ChristianBorrasTorres/Kraken_Cypress_Ghost/issues.
 ## Descripción de las estrategias usadas
@@ -7,7 +13,7 @@ Por favor hacer clic en el siguiente enlace https://github.com/ChristianBorrasTo
 ## Cypress
 ### Instrucciones para ejecutar los escenarios en Cypress
 - Hacer clic en el siguiente link buscar su sistema operativo e instalar Docker: https://docs.docker.com/desktop/mac/install/
-- Luego desde una terminal correr el comando docker run -d -e url=http://localhost:3001 -p 3001:2368 --name ghost_latest ghost:latest.
+- Luego desde una terminal correr el comando docker run -d -e url=http://localhost:3001 -p 3001:2368 --name ghost_4.47.4 ghost:4.47.4.
 - Clonar este repositorio en una carpeta vacía.
 - Abra una terminal y ejecute el comando npm install -g cypress, si aún no lo tiene instalado globalmente en su computador.
 - En el mismo terminal ejecutar npm install, (en caso de no funcionar el xpath por favor correr el comando **npm i cypress-xpath** o **npm install -D cypress-xpath**; en caso de no funcionar faker correr el comando **npm install @faker-js/faker --save-dev**), realizar estos comandos previa ejecución u otro paso.
@@ -28,14 +34,17 @@ Para Cypress la estrategia utilizada fue tomar los screenshots al finalizar cada
 ![image](https://user-images.githubusercontent.com/98660561/168518672-7ad6bb35-ec72-4fc6-8525-0822572ecccc.png)
 
 ## Kraken
+Los escenarios se marcaron como comentario dado que kraken no permite correrlos conjuntamente, **se debe tener en cuenta que son más de un escenario por archivo**, como se observa a continuación:
+![escenario](https://user-images.githubusercontent.com/98656753/170919060-e462f24a-ad48-4d25-9dc1-5edf0b0e1be7.png)
 ### Instrucciones para ejecutar los escenarios en Kraken
 - Clonar este repositorio en una carpeta vacía.
 - Ejecutar el comando npm init para que la carpeta node_modules se genere.
+- Ejecutar el comando npm install kraken-node desde la carpeta raiz Kraken_Cypress_Ghost
 - Cambiar en el archivo properties.json tanto el nombre de usuario USERNAME como la contraseña PASSWORD por la del GHOST local. Adicionalmente verificar el puerto en el cual se tiene desplegada la versión de Ghost y editarlo en el archivo en cuestión de ser necesario. Para el caso se tenía la versión 4.10.0 desplegada en el puerto 3001:
 
 ![capturaPuertoConfig](https://user-images.githubusercontent.com/98660561/168514208-1a1b04fd-49af-4f68-9132-5e1b17775bfc.PNG)
 
-- En el directorio _features_ se tienen diferentes archivos que contienen los escenarios agrupados de acuerdo a cada funcionalidad tanto para la versión 4.10.0 como la versión 4.47.2, las correspondientes a la primera se distinguen con una terminación en su nombramiento así: _escenariosXXXXModificadosV410_, respecto a la segunda se tiene el siguiente nombramiento: _escenariosXXXX_.
+- En el directorio _features_ se tienen diferentes archivos que contienen los escenarios agrupados de acuerdo a cada funcionalidad tanto para la versión 4.10.0 como la versión 4.47.4, las correspondientes a la primera se distinguen con una terminación en su nombramiento así: _escenariosXXXXModificadosV410_, respecto a la segunda se tiene el siguiente nombramiento: _escenariosXXXX_.
 ![CapturaFeatures](https://user-images.githubusercontent.com/98660561/168515238-35913a23-c813-4a6a-961e-c4f7ccf3535a.PNG)
 - Como se evidenció en el ítem anterior se tienen separados los archivos debido a que la herramienta no permitió la ejecución de múltiples _features_, por lo que para ejecutar un archivo con los escenarios se debe renombrar el mismo colocando al final _.feature_, cabe señalar que sólo puede haber un archivo con éste nombramiento:
 
